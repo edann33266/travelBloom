@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Bloom</title>
+  <link rel="stylesheet" href="./travelBloom.css">
+</head>
+<body>
+<nav>
+  <div class="branding">
+    <img src="https://i.pinimg.com/1200x/d4/be/d2/d4bed22d6ef3246c62278fac9343ba6e.jpg" alt="logo" style="width: 50px; height: 50px;">
+    <h1 style="color: white;"><i>Around the Globe</i></h1>
+  </div>
+  <ul>
+    <li><a href="./travelBloom.html" id="home">Home</a></li>
+    <li><a href="./about_us.html" id="about">About Us</a></li>
+    <li><a href="./contact_us.html" id="contact">Contact Us</a></li>
+    <li><input type="text" id="searchInput" placeholder="Enter a destination or keyword" style="border-radius: 50pc;"></li>
+    <li><button id="searchBtn" style="border-radius: 50pc;">Search</button></li>
+    <li><button id="clearBtn" style="border-radius: 50pc;">Clear</button></li>
+  </ul>
+</nav>
+
+<p style="color: black; text-align: right;">After clicking search scroll down!</p>
+
+<div class="hero">
+  <div class="hero-content">
+    <h1>EXPLORE<br>DREAM<br>DESTINATION</h1>
+    <p>
+      It encourages exploration of unfamiliar territories, embracing diverse cultures and landscapes,
+      while pursuing the desired destination that captivates the heart and ignites a sense of wonder.
+    </p>
+    <button class="hero-btn">BOOK NOW</button>
+  </div>
+</div>
+
+
+<div id="results" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px;"></div>
+
+<script src="./travelBloom.js"></script>
+</body>
+</html>

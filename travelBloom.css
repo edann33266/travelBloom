@@ -1,0 +1,346 @@
+/* Basic CSS reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* NAVIGATION BAR */
+nav {
+  background-color: black;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Branding section: logo + title side by side */
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.branding img {
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+  display: block;
+}
+
+.branding h1 {
+  color: white;
+  margin: 0;
+  font-style: italic;
+  font-size: 24px;
+  white-space: nowrap;
+}
+
+/* NAVIGATION LINKS */
+nav ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+nav ul li {
+  margin-right: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* FORM ELEMENTS */
+body {
+  background-image: url('https://i.pinimg.com/1200x/d4/8f/4c/d48f4c5726a4fab121671138d4261921.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+}
+
+/* Headings */
+h1 {
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 30px;
+}
+
+/* Form layout */
+div {
+  margin-bottom: 10px;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 200px;
+  padding: 5px;
+}
+
+/* Button */
+button {
+  padding: 7px 15px;
+  background-color: rgb(84, 87, 253);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: blue;
+}
+
+/* REPORT SECTION */
+#report,
+#result {
+  padding: 10px;
+  max-width: 400px;
+  word-wrap: break-word;
+}
+
+#result {
+  height: 400px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+#result img {
+  width: 200px;
+  height: 100px;
+}
+
+.hero {
+  height: 100vh; /* full screen */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  text-align: center;
+  color: white;
+  padding-left: 80px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.hero-content {
+  z-index: 2;
+  max-width: 700px;
+  
+}
+
+.hero h1 {
+  font-size: 3em;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+.hero p {
+  margin-top: 20px;
+  font-size: 1.1em;
+  line-height: 1.5;
+  background-color: rgb(0, 0, 0, 0.4);
+}
+
+.hero-btn {
+  margin-top: 25px;
+  padding: 12px 30px;
+  background-color: #00c9a7;
+  border: none;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #019d85;
+}
+
+.hero1 {
+  /* height: 100vh;  Remove or comment out this */
+  display: flex;
+  align-items: flex-start; /* Change from 'top' to 'flex-start' for valid value */
+  justify-content: flex-end;
+  position: relative;
+  text-align: center;
+  color: white;
+  padding-left: 80px;
+  padding-top: 40px; /* Add some padding on top to separate from nav */
+  padding-bottom: 40px; /* Add bottom padding for breathing space */
+}
+
+
+.hero1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.hero1-content {
+  z-index: 2;
+  max-width: 1000px;
+  
+}
+
+.hero1 h1 {
+  font-size: 3em;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+.hero1 p {
+  margin-top: 20px;
+  font-size: 1.1em;
+  line-height: 1.5;
+  background-color: rgb(0, 0, 0, 0.4);
+}
+
+.hero1-btn {
+  margin-top: 25px;
+  padding: 12px 30px;
+  background-color: #00c9a7;
+  border: none;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.team-row {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  flex-wrap: wrap;         /* Wrap on smaller screens */
+  gap: 20px;               /* Space between members */
+  margin-top: 20px;        /* Space above the team row */
+}
+
+.team-member {
+  text-align: center;
+  max-width: 250px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  padding: 10px;
+  color: white;
+}
+
+.team-member img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.team-member p {
+  margin-top: 10px;
+}
+
+.hero1 + .hero1 {
+  margin-top: 7px; /* Reduce gap between two hero1 sections */
+}
+
+.contact1 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  padding: 60px 200px;
+  text-align: left;
+  color: white;
+}
+
+.contact1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.contact1-content {
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  max-width: 420px;
+  width: 100%;
+  backdrop-filter: blur(8px);
+}
+
+.contact1 h1 {
+  font-size: 2.8em;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.contact1 p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #e0e0e0;
+}
+
+.contact1 input,
+.contact1 textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+.contact1 textarea {
+  height: 100px;
+  resize: none;
+}
+
+.contact1-btn {
+  display: inline-block;
+  width: 100%;
+  padding: 12px 0;
+  background: linear-gradient(135deg, #007bff, #6f42c1);
+  border: none;
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
