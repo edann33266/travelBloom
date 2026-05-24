@@ -3,23 +3,50 @@
     {
       "id": 1,
       "country": "Australia",
+      "continent": "Oceania",
       "cities": [
         {
           "id": 101,
           "name": "Sydney",
           "country": "Australia",
+          "continent": "Oceania",
           "category": "city",
-          "tags": ["opera house", "harbour", "urban", "culture"],
+          "travelType": "culture",
+          "budget": "$$$",
+          "featured": true,
+          "tags": [
+            "opera house",
+            "harbour",
+            "urban",
+            "culture",
+            "food",
+            "shopping",
+            "nightlife",
+            "city"
+          ],
           "rating": 4.8,
           "imageUrl": "https://i.pinimg.com/736x/23/39/c5/2339c52477fa9275a0f96eef10b78f6d.jpg",
           "description": "A vibrant city famous for the Sydney Opera House, Harbour Bridge and waterfront lifestyle."
         },
+
         {
           "id": 102,
           "name": "Melbourne",
           "country": "Australia",
+          "continent": "Oceania",
           "category": "city",
-          "tags": ["art", "food", "culture", "nightlife"],
+          "travelType": "culture",
+          "budget": "$$",
+          "featured": false,
+          "tags": [
+            "art",
+            "food",
+            "culture",
+            "nightlife",
+            "coffee",
+            "street art",
+            "shopping"
+          ],
           "rating": 4.7,
           "imageUrl": "https://i.pinimg.com/1200x/44/fc/2f/44fc2f5225af89117039789debb6ca16.jpg",
           "description": "A cultural hub known for food, street art, coffee culture and diverse neighborhoods."
@@ -30,23 +57,50 @@
     {
       "id": 2,
       "country": "Japan",
+      "continent": "Asia",
       "cities": [
         {
           "id": 201,
           "name": "Tokyo",
           "country": "Japan",
+          "continent": "Asia",
           "category": "city",
-          "tags": ["technology", "anime", "culture", "nightlife"],
+          "travelType": "nightlife",
+          "budget": "$$$",
+          "featured": true,
+          "tags": [
+            "technology",
+            "anime",
+            "culture",
+            "nightlife",
+            "food",
+            "shopping",
+            "city",
+            "modern"
+          ],
           "rating": 4.9,
           "imageUrl": "https://i.pinimg.com/1200x/dc/12/01/dc12011c464a71a27804617a107135e0.jpg",
           "description": "A bustling metropolis blending tradition and modern innovation."
         },
+
         {
           "id": 202,
           "name": "Kyoto",
           "country": "Japan",
+          "continent": "Asia",
           "category": "city",
-          "tags": ["temples", "history", "tea", "culture"],
+          "travelType": "culture",
+          "budget": "$$",
+          "featured": true,
+          "tags": [
+            "temples",
+            "history",
+            "tea",
+            "culture",
+            "gardens",
+            "heritage",
+            "peaceful"
+          ],
           "rating": 4.8,
           "imageUrl": "https://i.pinimg.com/736x/81/f8/e0/81f8e0e548a1708888249361c95aa45a.jpg",
           "description": "Historic city known for temples, gardens and traditional tea houses."
@@ -57,23 +111,48 @@
     {
       "id": 3,
       "country": "Brazil",
+      "continent": "South America",
       "cities": [
         {
           "id": 301,
           "name": "Rio de Janeiro",
           "country": "Brazil",
+          "continent": "South America",
           "category": "city",
-          "tags": ["beach", "festival", "nightlife", "culture"],
+          "travelType": "adventure",
+          "budget": "$$",
+          "featured": true,
+          "tags": [
+            "beach",
+            "festival",
+            "nightlife",
+            "culture",
+            "mountains",
+            "party",
+            "ocean"
+          ],
           "rating": 4.8,
           "imageUrl": "https://i.pinimg.com/736x/37/3d/d6/373dd6935d1cdaf08b5bae1d0663fd13.jpg",
           "description": "Famous for beaches, carnival celebrations and scenic landscapes."
         },
+
         {
           "id": 302,
           "name": "São Paulo",
           "country": "Brazil",
+          "continent": "South America",
           "category": "city",
-          "tags": ["business", "art", "food", "nightlife"],
+          "travelType": "business",
+          "budget": "$$",
+          "featured": false,
+          "tags": [
+            "business",
+            "art",
+            "food",
+            "nightlife",
+            "shopping",
+            "city"
+          ],
           "rating": 4.6,
           "imageUrl": "https://i.pinimg.com/1200x/77/3c/0c/773c0cd108c9c094703aebc3fa2b28fb.jpg",
           "description": "Financial center known for arts, food and vibrant nightlife."
@@ -87,18 +166,41 @@
       "id": 401,
       "name": "Angkor Wat",
       "country": "Cambodia",
+      "continent": "Asia",
       "category": "temple",
-      "tags": ["history", "architecture", "unesco"],
+      "travelType": "culture",
+      "budget": "$$",
+      "featured": true,
+      "tags": [
+        "history",
+        "architecture",
+        "unesco",
+        "heritage",
+        "culture",
+        "temple"
+      ],
       "rating": 4.9,
       "imageUrl": "https://i.pinimg.com/1200x/64/db/d7/64dbd7a1f45d7bdccf808e4245740393.jpg",
       "description": "UNESCO World Heritage site and the largest religious monument in the world."
     },
+
     {
       "id": 402,
       "name": "Taj Mahal",
       "country": "India",
-      "category": "monument",
-      "tags": ["love", "architecture", "history"],
+      "continent": "Asia",
+      "category": "temple",
+      "travelType": "romantic",
+      "budget": "$$",
+      "featured": true,
+      "tags": [
+        "love",
+        "architecture",
+        "history",
+        "monument",
+        "india",
+        "heritage"
+      ],
       "rating": 4.9,
       "imageUrl": "https://i.pinimg.com/1200x/54/3c/d1/543cd14cf48629aa4ec9568d25e58520.jpg",
       "description": "Iconic symbol of love and masterpiece of Mughal architecture."
@@ -110,18 +212,41 @@
       "id": 501,
       "name": "Bora Bora",
       "country": "French Polynesia",
+      "continent": "Oceania",
       "category": "beach",
-      "tags": ["luxury", "island", "water"],
+      "travelType": "luxury",
+      "budget": "$$$$",
+      "featured": true,
+      "tags": [
+        "luxury",
+        "island",
+        "water",
+        "romantic",
+        "beach",
+        "honeymoon"
+      ],
       "rating": 4.9,
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl3T42TIGCpCseoilsXwL_W5ra0WV81iBFFQ&s",
       "description": "Known for turquoise waters and luxury overwater bungalows."
     },
+
     {
       "id": 502,
       "name": "Copacabana Beach",
       "country": "Brazil",
+      "continent": "South America",
       "category": "beach",
-      "tags": ["party", "sand", "ocean"],
+      "travelType": "nightlife",
+      "budget": "$$",
+      "featured": true,
+      "tags": [
+        "party",
+        "sand",
+        "ocean",
+        "beach",
+        "festival",
+        "summer"
+      ],
       "rating": 4.7,
       "imageUrl": "https://i.pinimg.com/736x/35/87/66/35876651d734a512e3061b97e49309fb.jpg",
       "description": "Famous beach in Rio de Janeiro with vibrant atmosphere and scenic views."
