@@ -28,7 +28,6 @@
           "imageUrl": "https://i.pinimg.com/736x/23/39/c5/2339c52477fa9275a0f96eef10b78f6d.jpg",
           "description": "A vibrant city famous for the Sydney Opera House, Harbour Bridge and waterfront lifestyle."
         },
-
         {
           "id": 102,
           "name": "Melbourne",
@@ -82,7 +81,6 @@
           "imageUrl": "https://i.pinimg.com/1200x/dc/12/01/dc12011c464a71a27804617a107135e0.jpg",
           "description": "A bustling metropolis blending tradition and modern innovation."
         },
-
         {
           "id": 202,
           "name": "Kyoto",
@@ -135,7 +133,6 @@
           "imageUrl": "https://i.pinimg.com/736x/37/3d/d6/373dd6935d1cdaf08b5bae1d0663fd13.jpg",
           "description": "Famous for beaches, carnival celebrations and scenic landscapes."
         },
-
         {
           "id": 302,
           "name": "São Paulo",
@@ -156,6 +153,54 @@
           "rating": 4.6,
           "imageUrl": "https://i.pinimg.com/1200x/77/3c/0c/773c0cd108c9c094703aebc3fa2b28fb.jpg",
           "description": "Financial center known for arts, food and vibrant nightlife."
+        }
+      ]
+    },
+
+    {
+      "id": 4,
+      "country": "France",
+      "continent": "Europe",
+      "cities": [
+        {
+          "id": 401,
+          "name": "Paris",
+          "country": "France",
+          "continent": "Europe",
+          "category": "city",
+          "travelType": "romantic",
+          "budget": "$$$",
+          "featured": true,
+          "tags": [
+            "eiffel tower",
+            "food",
+            "fashion",
+            "art",
+            "culture",
+            "romantic"
+          ],
+          "rating": 4.9,
+          "imageUrl": "https://i.pinimg.com/736x/95/98/f5/9598f5c0c9cc839bc1e9149654dfbe72.jpg",
+          "description": "Famous for the Eiffel Tower, fashion, cafes and romantic atmosphere."
+        },
+        {
+          "id": 402,
+          "name": "Nice",
+          "country": "France",
+          "continent": "Europe",
+          "category": "city",
+          "travelType": "beach",
+          "budget": "$$$",
+          "featured": false,
+          "tags": [
+            "beach",
+            "luxury",
+            "summer",
+            "coast"
+          ],
+          "rating": 4.7,
+          "imageUrl": "https://i.pinimg.com/736x/5b/31/0c/5b310cbafc1cbcb75d80f95b72a7cf70.jpg",
+          "description": "Beautiful coastal city known for beaches and luxury lifestyle."
         }
       ]
     }
@@ -183,7 +228,6 @@
       "imageUrl": "https://i.pinimg.com/1200x/64/db/d7/64dbd7a1f45d7bdccf808e4245740393.jpg",
       "description": "UNESCO World Heritage site and the largest religious monument in the world."
     },
-
     {
       "id": 402,
       "name": "Taj Mahal",
@@ -229,7 +273,6 @@
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl3T42TIGCpCseoilsXwL_W5ra0WV81iBFFQ&s",
       "description": "Known for turquoise waters and luxury overwater bungalows."
     },
-
     {
       "id": 502,
       "name": "Copacabana Beach",
