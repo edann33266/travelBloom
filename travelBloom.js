@@ -18,74 +18,66 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let placesData = {};
 
-    // Prevent JS errors on pages
-    // without search UI
-
+    // Stop if elements don't exist
     if (
         !searchBtn ||
         !clearBtn ||
-        !searchInput
+        !searchInput ||
+        !resultsContainer
     ) {
         return;
     }
 
     // ==========================
-    // FETCH JSON DATA
+    // FETCH JSON
     // ==========================
 
     async function fetchData() {
 
         try {
 
-            if (resultsContainer) {
+            resultsContainer.innerHTML = `
+                <p>Loading destinations...</p>
+            `;
 
-                resultsContainer.innerHTML = `
-                    <p>Loading destinations...</p>
-                `;
-            }
-
+            // Cache buster added
             const response =
                 await fetch(
-                    "travelBloom.json"
+                    "./travelBloom.json?v=2"
                 );
 
             if (!response.ok) {
 
                 throw new Error(
-                    "Failed to fetch JSON data"
+                    "Failed to load travel data"
                 );
             }
 
             placesData =
                 await response.json();
 
-            if (resultsContainer) {
-                resultsContainer.innerHTML =
-                    "";
-            }
-
             console.log(
                 "Travel data loaded:",
                 placesData
             );
 
+            resultsContainer.innerHTML =
+                "";
+
         } catch (error) {
 
             console.error(error);
 
-            if (resultsContainer) {
-
-                resultsContainer.innerHTML = `
-                    <p class="error-message">
-                        Failed to load travel data.
-                    </p>
-                `;
-            }
+            resultsContainer.innerHTML = `
+                <p class="error-message">
+                    Failed to load travel data.
+                </p>
+            `;
         }
     }
 
     // ==========================
-    // SEARCH FUNCTION
+    // SEARCH
     // ==========================
 
     function searchPlaces() {
@@ -95,19 +87,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 .trim()
                 .toLowerCase();
 
-        if (!resultsContainer) {
-            return;
-        }
-
         resultsContainer.innerHTML =
             "";
 
         if (!keyword) {
 
             resultsContainer.innerHTML = `
-                <p>
-                    Please enter a destination.
-                </p>
+                <p>Please enter a destination.</p>
             `;
 
             return;
@@ -120,17 +106,8 @@ document.addEventListener("DOMContentLoaded", () => {
         // ==========================
 
         if (
-            keyword.includes("beach") ||
-            keyword.includes("beaches")
-        ) {
-
-            filteredResults =
-                placesData.beaches || [];
-        }
-
-        else if (
-            keyword.includes("temple") ||
-            keyword.includes("temples")
+            keyword === "temple" ||
+            keyword === "temples"
         ) {
 
             filteredResults =
@@ -138,8 +115,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         else if (
-            keyword.includes("country") ||
-            keyword.includes("countries")
+            keyword === "beach" ||
+            keyword === "beaches"
+        ) {
+
+            filteredResults =
+                placesData.beaches || [];
+        }
+
+        else if (
+            keyword === "country" ||
+            keyword === "countries"
         ) {
 
             filteredResults =
@@ -156,8 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         else {
 
-            // Flatten all places
-
             const allPlaces = [
 
                 ...(placesData.beaches || []),
@@ -171,13 +155,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     ) || [])
             ];
 
-            // COUNTRY SEARCH
-            // Example:
-            // australia → Sydney, Melbourne
-
+            // Country search
             const matchedCountry =
-                placesData.countries
-                    ?.find(country =>
+                placesData.countries?.find(
+                    country =>
 
                         country.country
                             ?.toLowerCase()
@@ -188,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         country.country
                             ?.toLowerCase()
                             .includes(keyword)
-                    );
+                );
 
             if (matchedCountry) {
 
@@ -198,79 +179,60 @@ document.addEventListener("DOMContentLoaded", () => {
 
             else {
 
-                // SMART SEARCH
-
                 filteredResults =
-                    allPlaces.filter(place => {
+                    allPlaces.filter(place =>
 
-                        return (
+                        place.name
+                            ?.toLowerCase()
+                            .includes(keyword)
 
-                            // Name
-                            place.name
-                                ?.toLowerCase()
-                                .includes(keyword)
+                        ||
 
-                            ||
+                        place.description
+                            ?.toLowerCase()
+                            .includes(keyword)
 
-                            // Description
-                            place.description
-                                ?.toLowerCase()
-                                .includes(keyword)
+                        ||
 
-                            ||
+                        place.country
+                            ?.toLowerCase()
+                            .includes(keyword)
 
-                            // Country
-                            place.country
-                                ?.toLowerCase()
-                                .includes(keyword)
+                        ||
 
-                            ||
+                        place.category
+                            ?.toLowerCase()
+                            .includes(keyword)
 
-                            // Category
-                            place.category
-                                ?.toLowerCase()
-                                .includes(keyword)
+                        ||
 
-                            ||
+                        place.continent
+                            ?.toLowerCase()
+                            .includes(keyword)
 
-                            // Continent
-                            place.continent
-                                ?.toLowerCase()
-                                .includes(keyword)
+                        ||
 
-                            ||
+                        place.travelType
+                            ?.toLowerCase()
+                            .includes(keyword)
 
-                            // Travel type
-                            place.travelType
-                                ?.toLowerCase()
-                                .includes(keyword)
+                        ||
 
-                            ||
-
-                            // Tags
-                            place.tags?.some(tag =>
-
+                        place.tags?.some(
+                            tag =>
                                 tag
                                     .toLowerCase()
                                     .includes(keyword)
-                            );
-                    });
+                        )
+                );
             }
         }
 
         // ==========================
-        // DISPLAY RESULTS
+        // DISPLAY
         // ==========================
 
-        displayResults(
-            filteredResults
-        );
-
-        // Smooth scroll
-
-        resultsContainer.scrollIntoView({
-            behavior: "smooth"
-        });
+        displayResults(filteredResults);
     }
 
     // ==========================
@@ -282,12 +244,10 @@ document.addEventListener("DOMContentLoaded", () => {
         resultsContainer.innerHTML =
             "";
 
-        if (results.length === 0) {
+        if (!results.length) {
 
             resultsContainer.innerHTML = `
-                <p>
-                    No destinations found.
-                </p>
+                <p>No destinations found.</p>
             `;
 
             return;
@@ -296,52 +256,44 @@ document.addEventListener("DOMContentLoaded", () => {
         results.forEach(place => {
 
             const card =
-                createCard(place);
+                document.createElement(
+                    "div"
+                );
+
+            card.classList.add(
+                "place-card"
+            );
+
+            card.innerHTML = `
+                <img
+                    src="${place.imageUrl}"
+                    alt="${place.name}"
+                    class="place-image"
+                >
+
+                <h3>
+                    ${place.name}
+                </h3>
+
+                <p>
+                    ${place.description}
+                </p>
+
+                <button
+                    class="visit-btn">
+
+                    Explore
+
+                </button>
+            `;
 
             resultsContainer
                 .appendChild(card);
         });
-    }
 
-    // ==========================
-    // CREATE CARD
-    // ==========================
-
-    function createCard(place) {
-
-        const card =
-            document.createElement(
-                "div"
-            );
-
-        card.classList.add(
-            "place-card"
-        );
-
-        card.innerHTML = `
-            <img
-                src="${place.imageUrl}"
-                alt="${place.name}"
-                class="place-image"
-            >
-
-            <h3>
-                ${place.name}
-            </h3>
-
-            <p>
-                ${place.description}
-            </p>
-
-            <button
-                class="visit-btn">
-
-                Explore
-
-            </button>
-        `;
-
-        return card;
+        resultsContainer.scrollIntoView({
+            behavior: "smooth"
+        });
     }
 
     // ==========================
@@ -352,11 +304,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         searchInput.value = "";
 
-        if (resultsContainer) {
-
-            resultsContainer.innerHTML =
-                "";
-        }
+        resultsContainer.innerHTML =
+            "";
     }
 
     // ==========================
