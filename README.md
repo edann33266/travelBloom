@@ -3,13 +3,14 @@
 A responsive travel discovery platform that helps users explore destinations through dynamic recommendations, interactive search, and a modern UI experience.
 
 ## 🌍 Live Demo
-https://edann33266.github.io/travelBloom/
+
+🔗 https://edann33266.github.io/travelBloom/
 
 ---
 
 ## 📌 Overview
 
-TravelBloom is a frontend travel recommendation website designed to help users discover destinations using smart keyword-based search and interactive travel cards.
+TravelBloom is a frontend travel recommendation website designed to help users discover destinations through smart keyword-based search and interactive travel cards.
 
 Users can search destinations such as:
 
@@ -17,28 +18,37 @@ Users can search destinations such as:
 - Cities
 - Beaches
 - Temples
-- Travel categories
-- Tags (luxury, nightlife, romantic, culture, etc.)
+- Travel Categories
+- Tags (`luxury`, `nightlife`, `romantic`, `culture`, etc.)
 
-The project demonstrates modern frontend development concepts including responsive layouts, DOM manipulation, JSON-based dynamic rendering, and interactive search filtering.
+The project demonstrates modern frontend development concepts including:
+
+- Responsive layouts
+- DOM manipulation
+- JSON-based dynamic rendering
+- Interactive search filtering
+- Modern UI design
 
 ---
 
 ## ✨ Features
 
 ### 🔎 Smart Destination Search
+
 Search dynamically using:
 
 - Countries (`Australia`, `Japan`, `France`)
 - Cities (`Tokyo`, `Paris`)
-- Categories (`temple`, `beaches`)
-- Travel styles (`luxury`, `romantic`)
-- Tags (`anime`, `nightlife`, `culture`)
+- Categories (`Temple`, `Beaches`)
+- Travel styles (`Luxury`, `Romantic`)
+- Tags (`Anime`, `Nightlife`, `Culture`)
 
 ### 🌍 Dynamic Travel Recommendations
+
 Destinations are loaded dynamically from a JSON dataset.
 
 ### 🎨 Responsive UI
+
 Responsive design optimized for:
 
 - Desktop
@@ -46,6 +56,7 @@ Responsive design optimized for:
 - Mobile
 
 ### 🖼 Destination Cards
+
 Each destination displays:
 
 - Image
@@ -54,13 +65,15 @@ Each destination displays:
 - Explore button
 
 ### 📄 Multi-Page Website
+
 Includes:
 
-- Home page
-- About Us page
-- Contact Us page
+- Home Page
+- About Us Page
+- Contact Us Page
 
 ### ⚡ Fast Interactive Experience
+
 - Search button support
 - Enter key support
 - Dynamic rendering without page reload
@@ -122,45 +135,66 @@ The application filters destinations and generates responsive travel cards insta
 
 ## 📸 Screenshots
 
-### Home Page
+### 🏠 Home Page
 
-<img width="1877" height="887" alt="image" src="https://github.com/user-attachments/assets/c3c36325-d019-49bf-b8fe-9a5d95d6f9f7" />
-
-![Home Page]
-```
-
-### Search Results
-<img width="1851" height="885" alt="image" src="https://github.com/user-attachments/assets/9e50164b-380d-490a-ad8f-565a5e0ab302" />
-
-![Search Results]
-```
-
-### About Page
-
-<img width="1674" height="797" alt="image" src="https://github.com/user-attachments/assets/0851eec8-c50e-46b9-949b-d21ef86a0e7a" />
-
-![About Page]
-```
-
-### Contact Page
-
-<img width="893" height="811" alt="image" src="https://github.com/user-attachments/assets/3c7b41a1-558c-434e-a29d-c35457841534" />
-
-![Contact Page]
-```
+<img width="1877" height="887" alt="Home Page" src="https://github.com/user-attachments/assets/c3c36325-d019-49bf-b8fe-9a5d95d6f9f7" />
 
 ---
+
+### 🔍 Search Results
+
+<img width="1851" height="885" alt="Search Results" src="https://github.com/user-attachments/assets/fcab5bf6-7447-458b-9066-bfc43078a337" />
+
+---
+
+### ℹ️ About Page
+
+<img width="1674" height="797" alt="About Page" src="https://github.com/user-attachments/assets/0851eec8-c50e-46b9-949b-d21ef86a0e7a" />
+
+---
+
+### 📩 Contact Page
+
+<img width="893" height="811" alt="Contact Page" src="https://github.com/user-attachments/assets/3c7b41a1-558c-434e-a29d-c35457841534" />
+
+---
+
+## ⚙️ Installation & Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/edann33266/travelBloom.git
+```
+
+Navigate to the project folder:
+
+```bash
+cd travelBloom
+```
+
+Open:
+
+```txt
+index.html
+```
+
+Or run using **VS Code Live Server**.
+
+---
+
 ## 💡 Future Improvements
 
 Potential upgrades:
 
-- Search suggestions/autocomplete
+- Search suggestions / autocomplete
 - Travel ratings UI
-- Favorites/Wishlist system
+- Favorites / Wishlist system
 - API-based travel recommendations
 - Booking integration
 - Category filters
 - Animated transitions
+- Dark mode
 
 ---
 
@@ -184,20 +218,11 @@ This project demonstrates:
 
 Frontend developer passionate about building responsive and interactive web experiences using HTML, CSS, and JavaScript.
 
-GitHub:
-
+GitHub:  
 https://github.com/edann33266
-
----
-
-## ⭐ Contributing
-
-Contributions, suggestions, and improvements are welcome.
-
-Fork the repository and submit a pull request.
 
 ---
 
 ## 📜 License
 
-This project is open-source and available under the MIT License.
+This project is open-source and available under the **MIT License**.
