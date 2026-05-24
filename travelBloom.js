@@ -80,8 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 resultsContainer.innerHTML = `
                     <p class="error-message">
-                        Failed to load
-                        travel data.
+                        Failed to load travel data.
                     </p>
                 `;
             }
@@ -110,8 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             resultsContainer.innerHTML = `
                 <p>
-                    Please enter
-                    a destination.
+                    Please enter a destination.
                 </p>
             `;
 
@@ -178,44 +176,62 @@ document.addEventListener("DOMContentLoaded", () => {
             ];
 
             filteredResults =
-                allPlaces.filter(place =>
+                allPlaces.filter(place => {
 
-                    // Name search
-                    place.name
-                        ?.toLowerCase()
-                        .includes(keyword)
+                    const matchesKeyword =
 
-                    ||
+                        // Name
+                        place.name
+                            ?.toLowerCase()
+                            .includes(keyword)
 
-                    // Description search
-                    place.description
-                        ?.toLowerCase()
-                        .includes(keyword)
+                        ||
 
-                    ||
+                        // Description
+                        place.description
+                            ?.toLowerCase()
+                            .includes(keyword)
 
-                    // Country search
-                    place.country
-                        ?.toLowerCase()
-                        .includes(keyword)
+                        ||
 
-                    ||
+                        // Country
+                        place.country
+                            ?.toLowerCase()
+                            .includes(keyword)
 
-                    // Category search
-                    place.category
-                        ?.toLowerCase()
-                        .includes(keyword)
+                        ||
 
-                    ||
+                        // Category
+                        place.category
+                            ?.toLowerCase()
+                            .includes(keyword)
 
-                    // Tag search
-                    place.tags?.some(
-                        tag =>
-                            tag
-                                .toLowerCase()
-                                .includes(keyword)
-                    )
-                );
+                        ||
+
+                        // Continent
+                        place.continent
+                            ?.toLowerCase()
+                            .includes(keyword)
+
+                        ||
+
+                        // Travel type
+                        place.travelType
+                            ?.toLowerCase()
+                            .includes(keyword)
+
+                        ||
+
+                        // Tags
+                        place.tags?.some(
+                            tag =>
+                                tag
+                                    .toLowerCase()
+                                    .includes(keyword)
+                        );
+
+                    return matchesKeyword;
+                });
         }
 
         // ==========================
