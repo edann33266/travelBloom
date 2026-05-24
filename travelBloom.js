@@ -1,33 +1,66 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Elements
-    const searchBtn = document.getElementById("btnSearch");
-    const clearBtn = document.getElementById("clear");
-    const searchInput = document.getElementById("conditionInput");
-    const resultsContainer = document.getElementById("results");
+    // ==========================
+    // ELEMENTS
+    // ==========================
+
+    const searchBtn =
+        document.getElementById("searchBtn");
+
+    const clearBtn =
+        document.getElementById("clearBtn");
+
+    const searchInput =
+        document.getElementById("searchInput");
+
+    const resultsContainer =
+        document.getElementById("results");
 
     let placesData = {};
 
-    // =====================
+    // Stop errors on pages
+    // without search/results
+
+    if (!searchBtn ||
+        !clearBtn ||
+        !searchInput) {
+
+        return;
+    }
+
+    // ==========================
     // FETCH JSON DATA
-    // =====================
+    // ==========================
+
     async function fetchData() {
+
         try {
-            resultsContainer.innerHTML =
-                "<p>Loading destinations...</p>";
+
+            if (resultsContainer) {
+
+                resultsContainer.innerHTML = `
+                    <p>
+                        Loading destinations...
+                    </p>
+                `;
+            }
 
             const response =
                 await fetch("travelBloom.json");
 
             if (!response.ok) {
+
                 throw new Error(
                     "Failed to fetch data"
                 );
             }
 
-            placesData = await response.json();
+            placesData =
+                await response.json();
 
-            resultsContainer.innerHTML = "";
+            if (resultsContainer) {
+                resultsContainer.innerHTML = "";
+            }
 
             console.log(
                 "Travel data loaded:",
@@ -35,19 +68,25 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
         } catch (error) {
-            resultsContainer.innerHTML = `
-                <p class="error-message">
-                    Failed to load travel data.
-                </p>
-            `;
 
             console.error(error);
+
+            if (resultsContainer) {
+
+                resultsContainer.innerHTML = `
+                    <p class="error-message">
+                        Failed to load
+                        travel data.
+                    </p>
+                `;
+            }
         }
     }
 
-    // =====================
+    // ==========================
     // SEARCH FUNCTION
-    // =====================
+    // ==========================
+
     function searchPlaces() {
 
         const keyword =
@@ -55,48 +94,76 @@ document.addEventListener("DOMContentLoaded", () => {
                 .trim()
                 .toLowerCase();
 
+        if (!resultsContainer) return;
+
         resultsContainer.innerHTML = "";
 
         if (!keyword) {
-            resultsContainer.innerHTML =
-                "<p>Please enter a destination.</p>";
+
+            resultsContainer.innerHTML = `
+                <p>
+                    Please enter
+                    a destination.
+                </p>
+            `;
+
             return;
         }
 
         let filteredResults = [];
 
-        if (keyword.includes("beach")) {
+        // Beaches
+        if (
+            keyword.includes("beach")
+        ) {
 
             filteredResults =
                 placesData.beaches || [];
+        }
 
-        } else if (keyword.includes("temple")) {
+        // Temples
+        else if (
+            keyword.includes("temple")
+        ) {
 
             filteredResults =
                 placesData.temples || [];
+        }
 
-        } else if (keyword.includes("country")) {
+        // Countries
+        else if (
+            keyword.includes("country")
+        ) {
 
             filteredResults =
                 placesData.countries
                     ?.flatMap(
-                        country => country.cities
+                        country =>
+                            country.cities
                     ) || [];
+        }
 
-        } else {
+        // General Search
+        else {
 
             const allPlaces = [
+
                 ...(placesData.beaches || []),
+
                 ...(placesData.temples || []),
+
                 ...(placesData.countries
                     ?.flatMap(c => c.cities) || [])
             ];
 
             filteredResults =
                 allPlaces.filter(place =>
+
                     place.name
                         .toLowerCase()
-                        .includes(keyword) ||
+                        .includes(keyword)
+
+                    ||
 
                     place.description
                         .toLowerCase()
@@ -104,18 +171,30 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
         }
 
-        displayResults(filteredResults);
+        displayResults(
+            filteredResults
+        );
+
+        // Smooth scroll
+        resultsContainer.scrollIntoView({
+            behavior: "smooth"
+        });
     }
 
-    // =====================
+    // ==========================
     // DISPLAY RESULTS
-    // =====================
+    // ==========================
+
     function displayResults(results) {
+
+        resultsContainer.innerHTML = "";
 
         if (results.length === 0) {
 
             resultsContainer.innerHTML = `
-                <p>No destinations found.</p>
+                <p>
+                    No destinations found.
+                </p>
             `;
 
             return;
@@ -123,21 +202,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
         results.forEach(place => {
 
-            const card = createCard(place);
+            const card =
+                createCard(place);
 
-            resultsContainer.appendChild(card);
+            resultsContainer
+                .appendChild(card);
         });
     }
 
-    // =====================
-    // CARD CREATOR
-    // =====================
+    // ==========================
+    // CREATE CARD
+    // ==========================
+
     function createCard(place) {
 
         const card =
             document.createElement("div");
 
-        card.classList.add("place-card");
+        card.classList.add(
+            "place-card"
+        );
 
         card.innerHTML = `
             <img
@@ -146,33 +230,43 @@ document.addEventListener("DOMContentLoaded", () => {
                 class="place-image"
             >
 
-            <h3>${place.name}</h3>
+            <h3>
+                ${place.name}
+            </h3>
 
             <p>
                 ${place.description}
             </p>
 
-            <button class="visit-btn">
+            <button
+                class="visit-btn">
+
                 Explore
+
             </button>
         `;
 
         return card;
     }
 
-    // =====================
+    // ==========================
     // CLEAR SEARCH
-    // =====================
+    // ==========================
+
     function clearSearch() {
 
         searchInput.value = "";
 
-        resultsContainer.innerHTML = "";
+        if (resultsContainer) {
+
+            resultsContainer.innerHTML = "";
+        }
     }
 
-    // =====================
+    // ==========================
     // EVENTS
-    // =====================
+    // ==========================
+
     searchBtn.addEventListener(
         "click",
         searchPlaces
@@ -184,14 +278,22 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     searchInput.addEventListener(
-        "keypress",
-        (e) => {
-            if (e.key === "Enter") {
+        "keydown",
+        (event) => {
+
+            if (
+                event.key === "Enter"
+            ) {
+
                 searchPlaces();
             }
         }
     );
 
-    // Initialize
+    // ==========================
+    // INIT
+    // ==========================
+
     fetchData();
+
 });
