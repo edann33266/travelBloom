@@ -18,13 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let placesData = {};
 
-    // Stop errors on pages
-    // without search/results
+    // Prevent errors on pages
+    // without search UI
 
-    if (!searchBtn ||
+    if (
+        !searchBtn ||
         !clearBtn ||
-        !searchInput) {
-
+        !searchInput
+    ) {
         return;
     }
 
@@ -46,7 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const response =
-                await fetch("travelBloom.json");
+                await fetch(
+                    "travelBloom.json"
+                );
 
             if (!response.ok) {
 
@@ -59,7 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 await response.json();
 
             if (resultsContainer) {
-                resultsContainer.innerHTML = "";
+
+                resultsContainer.innerHTML =
+                    "";
             }
 
             console.log(
@@ -94,9 +99,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 .trim()
                 .toLowerCase();
 
-        if (!resultsContainer) return;
+        if (!resultsContainer) {
+            return;
+        }
 
-        resultsContainer.innerHTML = "";
+        resultsContainer.innerHTML =
+            "";
 
         if (!keyword) {
 
@@ -112,9 +120,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let filteredResults = [];
 
+        // ==========================
+        // CATEGORY SEARCH
+        // ==========================
+
         // Beaches
         if (
-            keyword.includes("beach")
+            keyword.includes("beach") ||
+            keyword.includes("beaches")
         ) {
 
             filteredResults =
@@ -123,7 +136,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Temples
         else if (
-            keyword.includes("temple")
+            keyword.includes("temple") ||
+            keyword.includes("temples")
         ) {
 
             filteredResults =
@@ -132,7 +146,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Countries
         else if (
-            keyword.includes("country")
+            keyword.includes("country") ||
+            keyword.includes("countries")
         ) {
 
             filteredResults =
@@ -143,7 +158,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     ) || [];
         }
 
-        // General Search
+        // ==========================
+        // GENERAL SEARCH
+        // ==========================
+
         else {
 
             const allPlaces = [
@@ -153,23 +171,56 @@ document.addEventListener("DOMContentLoaded", () => {
                 ...(placesData.temples || []),
 
                 ...(placesData.countries
-                    ?.flatMap(c => c.cities) || [])
+                    ?.flatMap(
+                        country =>
+                            country.cities
+                    ) || [])
             ];
 
             filteredResults =
                 allPlaces.filter(place =>
 
+                    // Name search
                     place.name
-                        .toLowerCase()
+                        ?.toLowerCase()
                         .includes(keyword)
 
                     ||
 
+                    // Description search
                     place.description
-                        .toLowerCase()
+                        ?.toLowerCase()
                         .includes(keyword)
+
+                    ||
+
+                    // Country search
+                    place.country
+                        ?.toLowerCase()
+                        .includes(keyword)
+
+                    ||
+
+                    // Category search
+                    place.category
+                        ?.toLowerCase()
+                        .includes(keyword)
+
+                    ||
+
+                    // Tag search
+                    place.tags?.some(
+                        tag =>
+                            tag
+                                .toLowerCase()
+                                .includes(keyword)
+                    )
                 );
         }
+
+        // ==========================
+        // DISPLAY RESULTS
+        // ==========================
 
         displayResults(
             filteredResults
@@ -187,7 +238,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function displayResults(results) {
 
-        resultsContainer.innerHTML = "";
+        resultsContainer.innerHTML =
+            "";
 
         if (results.length === 0) {
 
@@ -217,7 +269,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function createCard(place) {
 
         const card =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
         card.classList.add(
             "place-card"
@@ -259,7 +313,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (resultsContainer) {
 
-            resultsContainer.innerHTML = "";
+            resultsContainer.innerHTML =
+                "";
         }
     }
 
