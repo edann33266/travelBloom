@@ -1,42 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Travel Bloom</title>
-  <link rel="stylesheet" href="./travelBloom.css">
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Travel Bloom | Explore Dream Destinations
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="./travelBloom.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-<nav>
-  <div class="branding">
-    <img src="https://i.pinimg.com/1200x/d4/be/d2/d4bed22d6ef3246c62278fac9343ba6e.jpg" alt="logo" style="width: 50px; height: 50px;">
-    <h1 style="color: white;"><i>Travel Bloom</i></h1>
-  </div>
-  <ul>
-    <li><a href="./index.html" id="home">Home</a></li>
-    <li><a href="./about_us.html" id="about">About Us</a></li>
-    <li><a href="./contact_us.html" id="contact">Contact Us</a></li>
-    <li><input type="text" id="searchInput" placeholder="Enter a destination or keyword" style="border-radius: 50pc;"></li>
-    <li><button id="searchBtn" style="border-radius: 50pc;">Search</button></li>
-    <li><button id="clearBtn" style="border-radius: 50pc;">Clear</button></li>
-  </ul>
-</nav>
 
-<p style="color: black; text-align: right;">After clicking search scroll down!</p>
+    <!-- NAVBAR -->
+    <nav>
 
-<div class="hero">
-  <div class="hero-content">
-    <h1>EXPLORE<br>DREAM<br>DESTINATION</h1>
-    <p>
-      It encourages exploration of unfamiliar territories, embracing diverse cultures and landscapes,
-      while pursuing the desired destination that captivates the heart and ignites a sense of wonder.
-    </p>
-    <button class="hero-btn">BOOK NOW</button>
-  </div>
-</div>
+        <div class="branding">
 
+            <img
+                src="https://i.pinimg.com/1200x/d4/be/d2/d4bed22d6ef3246c62278fac9343ba6e.jpg"
+                alt="Travel Bloom Logo">
 
-<div id="results" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px;"></div>
+            <h1>
+                <i>Travel Bloom</i>
+            </h1>
 
-<script src="./travelBloom.js"></script>
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="./index.html"
+                   class="active-link">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="./about_us.html">
+                    About Us
+                </a>
+            </li>
+
+            <li>
+                <a href="./contact_us.html">
+                    Contact Us
+                </a>
+            </li>
+
+            <li>
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search destination...">
+            </li>
+
+            <li>
+                <button id="searchBtn">
+                    Search
+                </button>
+            </li>
+
+            <li>
+                <button id="clearBtn">
+                    Clear
+                </button>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="hero-tag">
+                ✈ Smart Travel Discovery Platform
+            </span>
+
+            <h1>
+                Explore Your <br>
+                Dream Destination
+            </h1>
+
+            <p>
+                Discover destinations smarter with
+                interactive travel recommendations,
+                beautiful experiences and seamless
+                destination exploration.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="hero-btn">
+                    Explore Now
+                </button>
+
+                <button class="secondary-btn">
+                    Learn More
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features">
+
+        <div class="feature-card">
+            🌍
+            <h3>
+                Global Destinations
+            </h3>
+
+            <p>
+                Explore destinations across
+                countries, beaches and cultural
+                landmarks.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            ⚡
+            <h3>
+                Smart Search
+            </h3>
+
+            <p>
+                Find travel destinations quickly
+                using dynamic keyword-based
+                filtering.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            🎯
+            <h3>
+                Responsive Design
+            </h3>
+
+            <p>
+                Optimized for desktop, tablet
+                and mobile experiences.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- RESULTS -->
+    <section class="results-section">
+
+        <h2>
+            Explore Destinations
+        </h2>
+
+        <p>
+            Search for beaches, temples,
+            cities or countries.
+        </p>
+
+        <div id="results"></div>
+
+    </section>
+
+    <script src="./travelBloom.js"></script>
+
 </body>
+
 </html>
