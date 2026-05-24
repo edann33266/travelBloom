@@ -159,30 +159,6 @@ The application filters destinations and generates responsive travel cards insta
 
 ---
 
-## ⚙️ Installation & Setup
-
-Clone the repository:
-
-```bash
-git clone https://github.com/edann33266/travelBloom.git
-```
-
-Navigate to the project folder:
-
-```bash
-cd travelBloom
-```
-
-Open:
-
-```txt
-index.html
-```
-
-Or run using **VS Code Live Server**.
-
----
-
 ## 💡 Future Improvements
 
 Potential upgrades:
@@ -212,16 +188,6 @@ This project demonstrates:
 
 ---
 
-## 👨‍💻 Developer
-
-**Edann**
-
-Frontend developer passionate about building responsive and interactive web experiences using HTML, CSS, and JavaScript.
-
-GitHub:  
-https://github.com/edann33266
-
----
 
 ## 📜 License
 
