@@ -40,16 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
             if (resultsContainer) {
 
                 resultsContainer.innerHTML = `
-                    <p>
-                        Loading destinations...
-                    </p>
+                    <p>Loading destinations...</p>
                 `;
             }
 
             const response =
-                await fetch(
-                    "travelBloom.json"
-                );
+                await fetch("travelBloom.json");
 
             if (!response.ok) {
 
@@ -102,8 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        resultsContainer.innerHTML =
-            "";
+        resultsContainer.innerHTML = "";
 
         if (!keyword) {
 
@@ -175,74 +170,88 @@ document.addEventListener("DOMContentLoaded", () => {
                     ) || [])
             ];
 
-            filteredResults =
-                allPlaces.filter(place => {
-
-                    const matchesKeyword =
-
-                        // Name
-                        place.name
-                            ?.toLowerCase()
+            // Match top-level country
+            const matchedCountry =
+                placesData.countries?.find(
+                    country =>
+                        country.country
+                            .toLowerCase()
                             .includes(keyword)
+                );
 
-                        ||
+            if (matchedCountry) {
 
-                        // Description
-                        place.description
-                            ?.toLowerCase()
-                            .includes(keyword)
+                filteredResults =
+                    matchedCountry.cities;
+            }
 
-                        ||
+            else {
 
-                        // Country
-                        place.country
-                            ?.toLowerCase()
-                            .includes(keyword)
+                filteredResults =
+                    allPlaces.filter(place => {
 
-                        ||
+                        return (
 
-                        // Category
-                        place.category
-                            ?.toLowerCase()
-                            .includes(keyword)
+                            // Name
+                            place.name
+                                ?.toLowerCase()
+                                .includes(keyword)
 
-                        ||
+                            ||
 
-                        // Continent
-                        place.continent
-                            ?.toLowerCase()
-                            .includes(keyword)
+                            // Description
+                            place.description
+                                ?.toLowerCase()
+                                .includes(keyword)
 
-                        ||
+                            ||
 
-                        // Travel type
-                        place.travelType
-                            ?.toLowerCase()
-                            .includes(keyword)
+                            // Country
+                            place.country
+                                ?.toLowerCase()
+                                .includes(keyword)
 
-                        ||
+                            ||
 
-                        // Tags
-                        place.tags?.some(
-                            tag =>
-                                tag
-                                    .toLowerCase()
-                                    .includes(keyword)
+                            // Category
+                            place.category
+                                ?.toLowerCase()
+                                .includes(keyword)
+
+                            ||
+
+                            // Continent
+                            place.continent
+                                ?.toLowerCase()
+                                .includes(keyword)
+
+                            ||
+
+                            // Travel Type
+                            place.travelType
+                                ?.toLowerCase()
+                                .includes(keyword)
+
+                            ||
+
+                            // Tags
+                            place.tags?.some(
+                                tag =>
+                                    tag
+                                        .toLowerCase()
+                                        .includes(keyword)
+                            )
                         );
-
-                    return matchesKeyword;
-                });
+                    });
+            }
         }
 
         // ==========================
         // DISPLAY RESULTS
         // ==========================
 
-        displayResults(
-            filteredResults
-        );
+        displayResults(filteredResults);
 
-        // Smooth scroll
         resultsContainer.scrollIntoView({
             behavior: "smooth"
         });
@@ -254,8 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function displayResults(results) {
 
-        resultsContainer.innerHTML =
-            "";
+        resultsContainer.innerHTML = "";
 
         if (results.length === 0) {
 
@@ -285,9 +293,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function createCard(place) {
 
         const card =
-            document.createElement(
-                "div"
-            );
+            document.createElement("div");
 
         card.classList.add(
             "place-card"
