@@ -3,12 +3,7 @@
 A responsive travel discovery platform that helps users explore destinations through dynamic recommendations, interactive search, and a modern UI experience.
 
 ## 🌍 Live Demo
-
-(Add GitHub Pages link here once deployed)
-
-Example:
-
-https://yourusername.github.io/travelBloom/
+https://edann33266.github.io/travelBloom/
 
 ---
 
@@ -129,56 +124,32 @@ The application filters destinations and generates responsive travel cards insta
 
 ### Home Page
 
-(Add screenshot here)
+<img width="1877" height="887" alt="image" src="https://github.com/user-attachments/assets/c3c36325-d019-49bf-b8fe-9a5d95d6f9f7" />
 
-```md
-![Home Page](screenshots/home.png)
+![Home Page]
 ```
 
 ### Search Results
+<img width="1851" height="885" alt="image" src="https://github.com/user-attachments/assets/9e50164b-380d-490a-ad8f-565a5e0ab302" />
 
-```md
-![Search Results](screenshots/results.png)
+![Search Results]
 ```
 
 ### About Page
 
-```md
-![About Page](screenshots/about.png)
+<img width="1674" height="797" alt="image" src="https://github.com/user-attachments/assets/0851eec8-c50e-46b9-949b-d21ef86a0e7a" />
+
+![About Page]
 ```
 
 ### Contact Page
 
-```md
-![Contact Page](screenshots/contact.png)
+<img width="893" height="811" alt="image" src="https://github.com/user-attachments/assets/3c7b41a1-558c-434e-a29d-c35457841534" />
+
+![Contact Page]
 ```
 
 ---
-
-## ⚙️ Installation & Setup
-
-Clone the repository:
-
-```bash
-git clone https://github.com/edann33266/travelBloom.git
-```
-
-Navigate to the project folder:
-
-```bash
-cd travelBloom
-```
-
-Open:
-
-```txt
-index.html
-```
-
-Or run using VS Code Live Server.
-
----
-
 ## 💡 Future Improvements
 
 Potential upgrades:
@@ -186,7 +157,6 @@ Potential upgrades:
 - Search suggestions/autocomplete
 - Travel ratings UI
 - Favorites/Wishlist system
-- Dark mode
 - API-based travel recommendations
 - Booking integration
 - Category filters
