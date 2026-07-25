@@ -1,185 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <title>Travel Bloom | Explore Dream Destinations</title>
+    <meta name="description" content="Discover destinations smarter with interactive travel recommendations across cities, beaches and cultural landmarks worldwide.">
 
-    <title>
-        Travel Bloom | Explore Dream Destinations
-    </title>
+    <!-- Open Graph -->
+    <meta property="og:title" content="Travel Bloom | Explore Dream Destinations">
+    <meta property="og:description" content="Discover destinations smarter with interactive travel recommendations, filters and a searchable world map of places to visit.">
+    <meta property="og:type" content="website">
 
-    <link
-        rel="stylesheet"
-        href="./travelBloom.css">
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="./travelBloom.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
     <!-- NAVBAR -->
-    <nav>
+    <nav aria-label="Primary">
 
         <div class="branding">
-
-            <img
-                src="https://i.pinimg.com/1200x/d4/be/d2/d4bed22d6ef3246c62278fac9343ba6e.jpg"
-                alt="Travel Bloom Logo">
-
-            <h1>
-                <i>Travel Bloom</i>
-            </h1>
-
+            <img src="https://i.pinimg.com/1200x/d4/be/d2/d4bed22d6ef3246c62278fac9343ba6e.jpg" alt="Travel Bloom Logo">
+            <h1><i>Travel Bloom</i></h1>
         </div>
 
-        <ul>
+        <button
+            id="navToggle"
+            class="nav-toggle"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="navLinks">
+            <span></span>
+        </button>
+
+        <ul id="navLinks">
+
+            <li><a href="./index.html" class="active-link" aria-current="page">Home</a></li>
+            <li><a href="./about_us.html">About Us</a></li>
+            <li><a href="./contact_us.html">Contact Us</a></li>
 
             <li>
-                <a href="./index.html"
-                   class="active-link">
-                    Home
-                </a>
+                <label for="searchInput" class="visually-hidden">Search destinations</label>
+                <input type="text" id="searchInput" placeholder="Search destination...">
             </li>
 
-            <li>
-                <a href="./about_us.html">
-                    About Us
-                </a>
-            </li>
-
-            <li>
-                <a href="./contact_us.html">
-                    Contact Us
-                </a>
-            </li>
-
-            <li>
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Search destination...">
-            </li>
-
-            <li>
-                <button id="searchBtn">
-                    Search
-                </button>
-            </li>
-
-            <li>
-                <button id="clearBtn">
-                    Clear
-                </button>
-            </li>
+            <li><button id="searchBtn" type="button">Search</button></li>
+            <li><button id="clearBtn" type="button">Clear</button></li>
 
         </ul>
 
     </nav>
 
-    <!-- HERO -->
-    <section class="hero">
+    <main id="main-content">
 
-        <div class="hero-content">
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-content">
 
-            <span class="hero-tag">
-                ✈ Smart Travel Discovery Platform
-            </span>
+                <span class="hero-tag">&#9992; Smart Travel Discovery Platform</span>
 
-            <h1>
-                Explore Your <br>
-                Dream Destination
-            </h1>
+                <h1>Explore Your <br> Dream Destination</h1>
 
-            <p>
-                Discover destinations smarter with
-                interactive travel recommendations,
-                beautiful experiences and seamless
-                destination exploration.
-            </p>
+                <p>
+                    Discover destinations smarter with
+                    interactive travel recommendations,
+                    beautiful experiences and seamless
+                    destination exploration.
+                </p>
 
-            <div class="hero-buttons">
-
-                <button class="hero-btn">
-                    Explore Now
-                </button>
-
-                <button class="secondary-btn">
-                    Learn More
-                </button>
+                <div class="hero-buttons">
+                    <button class="hero-btn" type="button" onclick="document.getElementById('results-section').scrollIntoView({behavior:'smooth'})">
+                        Explore Now
+                    </button>
+                    <a href="./about_us.html" class="secondary-btn" style="display:inline-block;text-decoration:none;padding:15px 32px;border-radius:50px;font-weight:600;color:white;">
+                        Learn More
+                    </a>
+                </div>
 
             </div>
+        </section>
 
-        </div>
+        <!-- FEATURES -->
+        <section class="features" aria-label="Platform features">
 
-    </section>
+            <div class="feature-card">
+                &#127760;
+                <h3>Global Destinations</h3>
+                <p>Explore destinations across countries, beaches and cultural landmarks.</p>
+            </div>
 
-    <!-- FEATURES -->
-    <section class="features">
+            <div class="feature-card">
+                &#9889;
+                <h3>Smart Search</h3>
+                <p>Find travel destinations quickly using dynamic keyword-based filtering.</p>
+            </div>
 
-        <div class="feature-card">
-            🌍
-            <h3>
-                Global Destinations
-            </h3>
+            <div class="feature-card">
+                &#127919;
+                <h3>Responsive Design</h3>
+                <p>Optimized for desktop, tablet and mobile experiences.</p>
+            </div>
 
-            <p>
-                Explore destinations across
-                countries, beaches and cultural
-                landmarks.
-            </p>
-        </div>
+        </section>
 
-        <div class="feature-card">
-            ⚡
-            <h3>
-                Smart Search
-            </h3>
+        <!-- RESULTS -->
+        <section class="results-section" id="results-section">
 
-            <p>
-                Find travel destinations quickly
-                using dynamic keyword-based
-                filtering.
-            </p>
-        </div>
+            <h2>Explore Destinations</h2>
+            <p>Search for beaches, temples, cities or countries — or use the filters below.</p>
 
-        <div class="feature-card">
-            🎯
-            <h3>
-                Responsive Design
-            </h3>
+            <form class="filter-bar" role="search" aria-label="Filter destinations" onsubmit="return false">
 
-            <p>
-                Optimized for desktop, tablet
-                and mobile experiences.
-            </p>
-        </div>
+                <div class="filter-field">
+                    <label for="continentFilter">Continent</label>
+                    <select id="continentFilter">
+                        <option value="all">All continents</option>
+                    </select>
+                </div>
 
-    </section>
+                <div class="filter-field">
+                    <label for="travelTypeFilter">Trip type</label>
+                    <select id="travelTypeFilter">
+                        <option value="all">All trip types</option>
+                    </select>
+                </div>
 
-    <!-- RESULTS -->
-    <section class="results-section">
+                <div class="filter-field">
+                    <label for="budgetFilter">Budget</label>
+                    <select id="budgetFilter">
+                        <option value="all">Any budget</option>
+                        <option value="$">$ Budget</option>
+                        <option value="$$">$$ Moderate</option>
+                        <option value="$$$">$$$ Premium</option>
+                        <option value="$$$$">$$$$ Luxury</option>
+                    </select>
+                </div>
 
-        <h2>
-            Explore Destinations
-        </h2>
+                <div class="filter-field">
+                    <label for="sortBy">Sort by</label>
+                    <select id="sortBy">
+                        <option value="relevance">Relevance</option>
+                        <option value="rating">Top rated</option>
+                        <option value="name">Name (A–Z)</option>
+                    </select>
+                </div>
 
-        <p>
-            Search for beaches, temples,
-            cities or countries.
-        </p>
+                <label class="filter-checkbox" for="favoritesOnly">
+                    <input type="checkbox" id="favoritesOnly">
+                    Favorites only
+                </label>
 
-        <div id="results"></div>
+            </form>
 
-    </section>
+            <p class="results-meta" id="resultCount" aria-live="polite"></p>
 
-    <script src="./travelBloom.js"></script>
+            <div id="results" aria-live="polite" aria-busy="true"></div>
 
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Travel Bloom. Built by Edann. <a href="./contact_us.html">Get in touch</a>.</p>
+    </footer>
+
+    <script type="module" src="./js/main.js"></script>
 </body>
-
 </html>
