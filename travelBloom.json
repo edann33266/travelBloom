@@ -14,16 +14,7 @@
           "travelType": "culture",
           "budget": "$$$",
           "featured": true,
-          "tags": [
-            "opera house",
-            "harbour",
-            "urban",
-            "culture",
-            "food",
-            "shopping",
-            "nightlife",
-            "city"
-          ],
+          "tags": ["opera house", "harbour", "urban", "culture", "food", "shopping", "nightlife", "city"],
           "rating": 4.8,
           "imageUrl": "https://i.pinimg.com/736x/23/39/c5/2339c52477fa9275a0f96eef10b78f6d.jpg",
           "description": "A vibrant city famous for the Sydney Opera House, Harbour Bridge and waterfront lifestyle."
@@ -37,22 +28,13 @@
           "travelType": "culture",
           "budget": "$$",
           "featured": false,
-          "tags": [
-            "art",
-            "food",
-            "culture",
-            "nightlife",
-            "coffee",
-            "street art",
-            "shopping"
-          ],
+          "tags": ["art", "food", "culture", "nightlife", "coffee", "street art", "shopping"],
           "rating": 4.7,
           "imageUrl": "https://i.pinimg.com/1200x/44/fc/2f/44fc2f5225af89117039789debb6ca16.jpg",
           "description": "A cultural hub known for food, street art, coffee culture and diverse neighborhoods."
         }
       ]
     },
-
     {
       "id": 2,
       "country": "Japan",
@@ -67,16 +49,7 @@
           "travelType": "nightlife",
           "budget": "$$$",
           "featured": true,
-          "tags": [
-            "technology",
-            "anime",
-            "culture",
-            "nightlife",
-            "food",
-            "shopping",
-            "city",
-            "modern"
-          ],
+          "tags": ["technology", "anime", "culture", "nightlife", "food", "shopping", "city", "modern"],
           "rating": 4.9,
           "imageUrl": "https://i.pinimg.com/1200x/dc/12/01/dc12011c464a71a27804617a107135e0.jpg",
           "description": "A bustling metropolis blending tradition and modern innovation."
@@ -90,22 +63,13 @@
           "travelType": "culture",
           "budget": "$$",
           "featured": true,
-          "tags": [
-            "temples",
-            "history",
-            "tea",
-            "culture",
-            "gardens",
-            "heritage",
-            "peaceful"
-          ],
+          "tags": ["temples", "history", "tea", "culture", "gardens", "heritage", "peaceful"],
           "rating": 4.8,
           "imageUrl": "https://i.pinimg.com/736x/81/f8/e0/81f8e0e548a1708888249361c95aa45a.jpg",
           "description": "Historic city known for temples, gardens and traditional tea houses."
         }
       ]
     },
-
     {
       "id": 3,
       "country": "Brazil",
@@ -120,15 +84,7 @@
           "travelType": "adventure",
           "budget": "$$",
           "featured": true,
-          "tags": [
-            "beach",
-            "festival",
-            "nightlife",
-            "culture",
-            "mountains",
-            "party",
-            "ocean"
-          ],
+          "tags": ["beach", "festival", "nightlife", "culture", "mountains", "party", "ocean"],
           "rating": 4.8,
           "imageUrl": "https://i.pinimg.com/736x/37/3d/d6/373dd6935d1cdaf08b5bae1d0663fd13.jpg",
           "description": "Famous for beaches, carnival celebrations and scenic landscapes."
@@ -142,21 +98,13 @@
           "travelType": "business",
           "budget": "$$",
           "featured": false,
-          "tags": [
-            "business",
-            "art",
-            "food",
-            "nightlife",
-            "shopping",
-            "city"
-          ],
+          "tags": ["business", "art", "food", "nightlife", "shopping", "city"],
           "rating": 4.6,
           "imageUrl": "https://i.pinimg.com/1200x/77/3c/0c/773c0cd108c9c094703aebc3fa2b28fb.jpg",
           "description": "Financial center known for arts, food and vibrant nightlife."
         }
       ]
     },
-
     {
       "id": 4,
       "country": "France",
@@ -171,16 +119,9 @@
           "travelType": "romantic",
           "budget": "$$$",
           "featured": true,
-          "tags": [
-            "eiffel tower",
-            "food",
-            "fashion",
-            "art",
-            "culture",
-            "romantic"
-          ],
+          "tags": ["eiffel tower", "food", "fashion", "art", "culture", "romantic"],
           "rating": 4.9,
-          "imageUrl": "https://www.qantas.com/content/travelinsider/en/explore/europe/france/paris/essential-things-you-need-to-know-before-you-go-to-paris/jcr:content/parsysTop/hero.img.full.medium.jpg/1738043785809.jpg",
+          "imageUrl": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80",
           "description": "Famous for the Eiffel Tower, fashion, cafes and romantic atmosphere."
         },
         {
@@ -192,14 +133,9 @@
           "travelType": "beach",
           "budget": "$$$",
           "featured": false,
-          "tags": [
-            "beach",
-            "luxury",
-            "summer",
-            "coast"
-          ],
+          "tags": ["beach", "luxury", "summer", "coast"],
           "rating": 4.7,
-          "imageUrl": "https://res.cloudinary.com/eurocamp/image/upload/v1760600201/EC25_LP_header_best_beach_France_iwttok.png",
+          "imageUrl": "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80",
           "description": "Beautiful coastal city known for beaches and luxury lifestyle."
         }
       ]
@@ -208,7 +144,7 @@
 
   "temples": [
     {
-      "id": 401,
+      "id": 901,
       "name": "Angkor Wat",
       "country": "Cambodia",
       "continent": "Asia",
@@ -216,20 +152,13 @@
       "travelType": "culture",
       "budget": "$$",
       "featured": true,
-      "tags": [
-        "history",
-        "architecture",
-        "unesco",
-        "heritage",
-        "culture",
-        "temple"
-      ],
+      "tags": ["history", "architecture", "unesco", "heritage", "culture", "temple"],
       "rating": 4.9,
       "imageUrl": "https://i.pinimg.com/1200x/64/db/d7/64dbd7a1f45d7bdccf808e4245740393.jpg",
       "description": "UNESCO World Heritage site and the largest religious monument in the world."
     },
     {
-      "id": 402,
+      "id": 902,
       "name": "Taj Mahal",
       "country": "India",
       "continent": "Asia",
@@ -237,14 +166,7 @@
       "travelType": "romantic",
       "budget": "$$",
       "featured": true,
-      "tags": [
-        "love",
-        "architecture",
-        "history",
-        "monument",
-        "india",
-        "heritage"
-      ],
+      "tags": ["love", "architecture", "history", "monument", "india", "heritage"],
       "rating": 4.9,
       "imageUrl": "https://i.pinimg.com/1200x/54/3c/d1/543cd14cf48629aa4ec9568d25e58520.jpg",
       "description": "Iconic symbol of love and masterpiece of Mughal architecture."
@@ -261,16 +183,9 @@
       "travelType": "luxury",
       "budget": "$$$$",
       "featured": true,
-      "tags": [
-        "luxury",
-        "island",
-        "water",
-        "romantic",
-        "beach",
-        "honeymoon"
-      ],
+      "tags": ["luxury", "island", "water", "romantic", "beach", "honeymoon"],
       "rating": 4.9,
-      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl3T42TIGCpCseoilsXwL_W5ra0WV81iBFFQ&s",
+      "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=800&q=80",
       "description": "Known for turquoise waters and luxury overwater bungalows."
     },
     {
@@ -282,14 +197,7 @@
       "travelType": "nightlife",
       "budget": "$$",
       "featured": true,
-      "tags": [
-        "party",
-        "sand",
-        "ocean",
-        "beach",
-        "festival",
-        "summer"
-      ],
+      "tags": ["party", "sand", "ocean", "beach", "festival", "summer"],
       "rating": 4.7,
       "imageUrl": "https://i.pinimg.com/736x/35/87/66/35876651d734a512e3061b97e49309fb.jpg",
       "description": "Famous beach in Rio de Janeiro with vibrant atmosphere and scenic views."
