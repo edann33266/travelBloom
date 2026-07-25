@@ -1,99 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <title>Travel Bloom | About Us</title>
+    <meta name="description" content="Learn about the Travel Bloom project — a responsive travel discovery platform built with HTML, CSS and JavaScript.">
 
-    <title>
-        Travel Bloom | About Us
-    </title>
-
-    <link
-        rel="stylesheet"
-        href="./travelBloom.css">
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="./travelBloom.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
     <!-- NAVBAR -->
-    <nav>
+    <nav aria-label="Primary">
 
         <div class="branding">
-
-            <img
-                src="https://i.pinimg.com/1200x/d4/be/d2/d4bed22d6ef3246c62278fac9343ba6e.jpg"
-                alt="Travel Bloom Logo">
-
-            <h1>
-                <i>Travel Bloom</i>
-            </h1>
-
+            <img src="https://i.pinimg.com/1200x/d4/be/d2/d4bed22d6ef3246c62278fac9343ba6e.jpg" alt="Travel Bloom Logo">
+            <h1><i>Travel Bloom</i></h1>
         </div>
 
-        <ul>
+        <button
+            id="navToggle"
+            class="nav-toggle"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="navLinks">
+            <span></span>
+        </button>
+
+        <ul id="navLinks">
+
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about_us.html" class="active-link" aria-current="page">About Us</a></li>
+            <li><a href="./contact_us.html">Contact Us</a></li>
 
             <li>
-                <a href="./index.html">
-                    Home
-                </a>
+                <label for="searchInput" class="visually-hidden">Search destinations</label>
+                <input type="text" id="searchInput" placeholder="Search destination...">
             </li>
 
-            <li>
-                <a href="./about_us.html"
-                   class="active-link">
-                    About Us
-                </a>
-            </li>
-
-            <li>
-                <a href="./contact_us.html">
-                    Contact Us
-                </a>
-            </li>
-
-            <li>
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Search destination...">
-            </li>
-
-            <li>
-                <button id="searchBtn">
-                    Search
-                </button>
-            </li>
-
-            <li>
-                <button id="clearBtn">
-                    Clear
-                </button>
-            </li>
+            <li><button id="searchBtn" type="button">Search</button></li>
+            <li><button id="clearBtn" type="button">Clear</button></li>
 
         </ul>
 
     </nav>
 
-    <!-- ABOUT SECTION -->
+    <main id="main-content">
     <section class="about-section">
 
         <div class="about-container">
 
-            <!-- HEADER -->
             <div class="about-header">
-
-                <h1>
-                    About TravelBloom
-                </h1>
-
+                <h1>About TravelBloom</h1>
                 <p>
                     TravelBloom is a responsive
                     travel discovery platform
@@ -103,18 +66,12 @@
                     interactive search and a
                     seamless user experience.
                 </p>
-
             </div>
 
-            <!-- PROJECT CARDS -->
             <div class="about-card">
 
                 <div class="info-card">
-
-                    <h2>
-                        Project Goal
-                    </h2>
-
+                    <h2>Project Goal</h2>
                     <p>
                         We aim to simplify travel
                         exploration by helping
@@ -123,90 +80,68 @@
                         recommendations and
                         modern UI experiences.
                     </p>
-
                 </div>
 
                 <div class="info-card">
-
-                    <h2>
-                        What This Project Demonstrates
-                    </h2>
-
+                    <h2>What This Project Demonstrates</h2>
                     <p>
                         Responsive web design,
-                        JavaScript interactivity,
+                        modular JavaScript (ES modules),
                         DOM manipulation,
                         JSON data handling,
-                        dynamic filtering and
-                        clean frontend development.
+                        dynamic filtering/sorting,
+                        localStorage persistence and
+                        accessible frontend development.
                     </p>
-
                 </div>
 
                 <div class="info-card">
-
-                    <h2>
-                        Tech Stack
-                    </h2>
-
+                    <h2>Tech Stack</h2>
                     <div class="skills">
-
                         <span>HTML5</span>
                         <span>CSS3</span>
-                        <span>JavaScript</span>
+                        <span>JavaScript (ES Modules)</span>
                         <span>JSON</span>
                         <span>Responsive UI</span>
                         <span>DOM</span>
-
+                        <span>localStorage</span>
+                        <span>a11y</span>
                     </div>
-
                 </div>
 
             </div>
 
-            <!-- EXTRA DETAILS -->
             <div class="about-card">
 
                 <div class="info-card">
-
-                    <h2>
-                        Project Features
-                    </h2>
-
+                    <h2>Project Features</h2>
                     <p>
-                        Dynamic destination
-                        search, responsive
-                        design, interactive UI,
-                        destination cards and a
-                        JSON-based recommendation
-                        system.
+                        Dynamic destination search with
+                        debounced input, multi-filter
+                        support (continent, trip type,
+                        budget), sorting, a favorites
+                        system, skeleton loading states
+                        and graceful error handling.
                     </p>
-
                 </div>
 
                 <div class="info-card">
-
-                    <h2>
-                        Technologies Used
-                    </h2>
-
+                    <h2>Architecture</h2>
                     <p>
-                        HTML5, CSS3, JavaScript,
-                        JSON, responsive layouts,
-                        DOM manipulation and
-                        UI animation.
+                        JavaScript is split into focused
+                        modules — data fetching, search
+                        logic, rendering and favorites —
+                        instead of one large script,
+                        making the codebase easier to
+                        test, extend and maintain.
                     </p>
-
                 </div>
 
             </div>
 
-            <!-- DEVELOPER -->
             <div class="developer-section">
 
-                <h1>
-                    Meet The Developer
-                </h1>
+                <h1>Meet The Developer</h1>
 
                 <p>
                     Building responsive and
@@ -217,13 +152,9 @@
 
                 <div class="developer-card">
 
-                    <img
-                        src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-                        alt="Developer Profile">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Developer profile illustration">
 
-                    <h2>
-                        Edann
-                    </h2>
+                    <h2>Edann</h2>
 
                     <p>
                         Frontend developer
@@ -236,6 +167,10 @@
                         user experience.
                     </p>
 
+                    <div class="developer-links">
+                        <a href="./contact_us.html">Contact</a>
+                    </div>
+
                 </div>
 
             </div>
@@ -243,10 +178,12 @@
         </div>
 
     </section>
+    </main>
 
-    <!-- JS -->
-    <script src="./travelBloom.js"></script>
+    <footer>
+        <p>&copy; 2026 Travel Bloom. Built by Edann. <a href="./contact_us.html">Get in touch</a>.</p>
+    </footer>
 
+    <script type="module" src="./js/main.js"></script>
 </body>
-
 </html>
