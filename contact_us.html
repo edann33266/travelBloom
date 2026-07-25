@@ -1,95 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <title>Travel Bloom | Contact Us</title>
+    <meta name="description" content="Get in touch with the Travel Bloom team with feedback, questions or suggestions.">
 
-    <title>
-        Travel Bloom | Contact Us
-    </title>
-
-    <link
-        rel="stylesheet"
-        href="./travelBloom.css">
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="./travelBloom.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
     <!-- NAVBAR -->
-    <nav>
+    <nav aria-label="Primary">
 
         <div class="branding">
-
-            <img
-                src="https://i.pinimg.com/1200x/d4/be/d2/d4bed22d6ef3246c62278fac9343ba6e.jpg"
-                alt="Travel Bloom Logo">
-
-            <h1>
-                <i>Travel Bloom</i>
-            </h1>
-
+            <img src="https://i.pinimg.com/1200x/d4/be/d2/d4bed22d6ef3246c62278fac9343ba6e.jpg" alt="Travel Bloom Logo">
+            <h1><i>Travel Bloom</i></h1>
         </div>
 
-        <ul>
+        <button
+            id="navToggle"
+            class="nav-toggle"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="navLinks">
+            <span></span>
+        </button>
+
+        <ul id="navLinks">
+
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about_us.html">About Us</a></li>
+            <li><a href="./contact_us.html" class="active-link" aria-current="page">Contact Us</a></li>
 
             <li>
-                <a href="./index.html">
-                    Home
-                </a>
+                <label for="searchInput" class="visually-hidden">Search destinations</label>
+                <input type="text" id="searchInput" placeholder="Search destination...">
             </li>
 
-            <li>
-                <a href="./about_us.html">
-                    About Us
-                </a>
-            </li>
-
-            <li>
-                <a href="./contact_us.html"
-                   class="active-link">
-                    Contact Us
-                </a>
-            </li>
-
-            <li>
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Search destination...">
-            </li>
-
-            <li>
-                <button id="searchBtn">
-                    Search
-                </button>
-            </li>
-
-            <li>
-                <button id="clearBtn">
-                    Clear
-                </button>
-            </li>
+            <li><button id="searchBtn" type="button">Search</button></li>
+            <li><button id="clearBtn" type="button">Clear</button></li>
 
         </ul>
 
     </nav>
 
-    <!-- CONTACT SECTION -->
+    <main id="main-content">
     <section class="contact1">
-
         <div class="contact1-content">
 
-            <h1>
-                Contact Us
-            </h1>
+            <h1>Contact Us</h1>
 
             <p>
                 We'd love to hear from you.
@@ -97,60 +62,41 @@
                 or suggestions about TravelBloom.
             </p>
 
-            <form action="#"
-                  method="post">
+            <form id="contactForm" novalidate>
 
-                <label for="name">
-                    Name
-                </label>
+                <div class="form-field">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    <span class="field-error" id="nameError" role="alert"></span>
+                </div>
 
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Enter your full name"
-                    required>
+                <div class="form-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <span class="field-error" id="emailError" role="alert"></span>
+                </div>
 
-                <label for="email">
-                    Email
-                </label>
+                <div class="form-field">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                    <span class="field-error" id="messageError" role="alert"></span>
+                </div>
 
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Enter your email"
-                    required>
+                <button type="submit" class="contact1-btn">Send Message</button>
 
-                <label for="message">
-                    Message
-                </label>
-
-                <textarea
-                    id="message"
-                    name="message"
-                    rows="5"
-                    placeholder="Write your message here..."
-                    required>
-                </textarea>
-
-                <button
-                    type="submit"
-                    class="contact1-btn">
-
-                    Send Message
-
-                </button>
+                <p class="form-status" id="formStatus" role="status"></p>
 
             </form>
 
         </div>
-
     </section>
+    </main>
 
-    <!-- JS -->
-    <script src="./travelBloom.js"></script>
+    <footer>
+        <p>&copy; 2026 Travel Bloom. Built by Edann. <a href="./contact_us.html">Get in touch</a>.</p>
+    </footer>
 
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/contact.js"></script>
 </body>
-
 </html>
